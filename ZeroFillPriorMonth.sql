@@ -1,7 +1,8 @@
 select mt2.npi_id as ProviderID,
 cast("drug101" as string) as ProductID, 
 next_day(current_date(), 'SUN') as TimeBucketDate,
-'WEEK' as time_grain, 'zero_fills_prior_month' as MetricName,
+'WEEK' as TimeGrain, 
+'ZeroFillsPriorMonth' as MetricName,
 1 as MetricValue 
 from master_tag mt2 left join 
 ( 
